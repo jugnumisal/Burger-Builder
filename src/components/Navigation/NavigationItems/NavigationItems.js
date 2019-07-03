@@ -4,8 +4,8 @@ import IndividualItems from './IndividualItems/IndividualItems';
 
 const NavigationItems = () => (
     <ul className={classes.NavigationItems}>
-        <IndividualItems link="/" active>Burger Builder</IndividualItems>
-        <IndividualItems link="/">Checkout</IndividualItems>
+        <IndividualItems link="/" exact>Burger Builder</IndividualItems>
+        <IndividualItems link="/orders">Orders</IndividualItems>
     </ul>
 );
 
