@@ -48,6 +48,7 @@ class ContactInfo extends Component {
                 <input type = "email" name = "email" placeholder= "Your email" />
                 <input type = "text" name = "street" placeholder= "Street" />
                 <input type = "text" name = "postal" placeholder= "Postal Code" />
+                <br>
                 <Button btnType="Success" clicked = {this.orderHandler}>ORDER</Button>
             </form>
         );
