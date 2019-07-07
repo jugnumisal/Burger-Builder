@@ -11,7 +11,7 @@ class ContactInfo extends Component {
             name: {
                 elementType: 'input',
                 elementConfig: {
-                    type: 'Text',
+                    type: 'text',
                     placeholder: 'Your Name'
                 },
                 value: '',
@@ -24,7 +24,7 @@ class ContactInfo extends Component {
             street: {
                 elementType: 'input',
                 elementConfig: {
-                    type: 'Text',
+                    type: 'text',
                     placeholder: 'Street'
                 },
                 value: '',
@@ -37,7 +37,7 @@ class ContactInfo extends Component {
             zipCode: {
                 elementType: 'input',
                 elementConfig: {
-                    type: 'Text',
+                    type: 'text',
                     placeholder: 'ZipCode'
                 },
                 value: '',
@@ -52,7 +52,7 @@ class ContactInfo extends Component {
             country: {
                 elementType: 'input',
                 elementConfig: {
-                    type: 'Text',
+                    type: 'text',
                     placeholder: 'Country'
                 },
                 value: '',
@@ -82,7 +82,7 @@ class ContactInfo extends Component {
                         {value: 'fastest', displayValue: '1-1.5 hours'},
                         {value: 'cheapest', displayValue: '2-4 hours'},
                         {value: 'convinience', displayValue: '5-8 hours'}
-                    ],
+                    ]
                 },
                 value: '',
                 validation: {},
@@ -124,33 +124,33 @@ class ContactInfo extends Component {
         }
 
         if(rules.minLength){
-            isValid = value.length >= rules.minLength & isValid;
+            isValid = value.length >= rules.minLength && isValid;
         }
 
         if(rules.maxLength){
-            isValid = value.length <= rules.maxLength & isValid;
+            isValid = value.length <= rules.maxLength && isValid;
         }
 
         return isValid;
     }
 
     inputChangedHandler = (event, inputIdentifier) => {
-        console.log(event.target.value);// const updatedOrderForm = {
-        //     ...this.state.orderForm
-        // }
-        // const updatedFormElement = {
-        //     ...updatedOrderForm[inputIdentifier]
-        // };
-        // updatedFormElement.value = event.target.value;
-        // updatedFormElement.valid = this.checkValidity(updatedFormElement.value, updatedFormElement.validation);
-        // updatedFormElement.touched = true;
-        // updatedOrderForm[inputIdentifier] = updatedFormElement;
+        const updatedOrderForm = {
+            ...this.state.orderForm
+        }
+        const updatedFormElement = {
+            ...updatedOrderForm[inputIdentifier]
+        };
+        updatedFormElement.value = event.target.value;
+        updatedFormElement.valid = this.checkValidity(updatedFormElement.value, updatedFormElement.validation);
+        updatedFormElement.touched = true;
+        updatedOrderForm[inputIdentifier] = updatedFormElement;
         
-        // let formIsValid = true;
-        // for(let inputIdentifier in updatedOrderForm){
-        //     formIsValid = updatedOrderForm[inputIdentifier].valid && formIsValid;
-        // }
-        // this.setState({orderForm: updatedOrderForm, formIsValid: formIsValid});
+        let formIsValid = true;
+        for(let inputIdentifier in updatedOrderForm){
+            formIsValid = updatedOrderForm[inputIdentifier].valid && formIsValid;
+        }
+        this.setState({orderForm: updatedOrderForm, formIsValid: formIsValid});
     }
 
     render () {
@@ -159,7 +159,7 @@ class ContactInfo extends Component {
             formElementsArray.push({
                 id: key,
                 config: this.state.orderForm[key]
-            })
+            });
         }
         let form = (
             <form onSubmit={this.orderHandler}>

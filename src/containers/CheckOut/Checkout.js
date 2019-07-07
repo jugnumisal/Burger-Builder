@@ -6,13 +6,13 @@ import ContactInfo from './ContactInfo/ContactInfo';
 class Checkout extends Component {
     state = {
         ingredients: null,
-        price: 0
+        price:0
     }
 
     componentWillMount(){
         const query = new URLSearchParams(this.props.location.search);
         const ingredients = {};
-        let price = 0;
+        let price;
         for (let param of query.entries()){
             // ['salad', '1']
             if(param[0] === 'price'){
