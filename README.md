@@ -1,5 +1,5 @@
 # Burger Builder
 
-### This app is a demo app which I worked on while learning the concepts of ReactJS.
+This application was built and deployed as a practice application while learning the concepts of ReactJS. It has been deployed on Firebase server.
 
-[Visit Here](https://my-burger-app-4a44d.firebaseapp.com) for the application preview.
+[Click Here](https://my-burger-app-4a44d.firebaseapp.com) to checkout the application.
