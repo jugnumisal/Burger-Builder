@@ -1,7 +1,6 @@
 import React , { Component }from 'react';
 import Modal from '../../components/UI/Modal/Modal';
 import Aux from '../Aux';
-import { DH_NOT_SUITABLE_GENERATOR } from 'constants';
 
 const withErrorHandler = (WrappedComponent, axios) => {
     return class extends Component {
